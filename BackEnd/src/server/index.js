@@ -3,10 +3,11 @@ import express, { response } from "express";
 import routes from "../core/routes/routes.js";
 import databaseConnect from "../core/database/db.js";
 import cors from "cors"
+const allowedOrigins = ["http://localhost:5173"];
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: allowedOrigins }));
 app.get("/",(request,response)=>{
   response.json({message:"Hello!!"})
 })

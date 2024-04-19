@@ -34,7 +34,7 @@ const login = async (request, response) => {
     }
     const token = jwt.sign(
       { id: User[0].id, email: User[0].email },
-      process.env.SECRET_KEY,{expiresIn:"7d"}
+      process.env.SECRET_KEY,{expiresIn:"70d"}
     );
     return response.status(201).send({
       msg: "Login Successfully",
